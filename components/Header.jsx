@@ -41,7 +41,7 @@ export default function Header() {
           <img 
             src="/img/logo.png" 
             alt="Fairy Legacy Clean Logo" 
-            style={{ height: '40px', width: 'auto', objectFit: 'contain' }} 
+            style={{ height: '80px', width: 'auto', objectFit: 'contain' }} 
           />
         </Link>
 

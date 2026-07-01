@@ -10,7 +10,7 @@ export default function Footer() {
             <img 
               src="/img/logo.png" 
               alt="Fairy Legacy Clean Logo" 
-              style={{ height: '50px', width: 'auto', objectFit: 'contain' }} 
+              style={{ height: '110px', width: 'auto', objectFit: 'contain' }} 
             />
           </Link>
           <p>

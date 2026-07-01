@@ -3,9 +3,9 @@ import RevealOnScroll from '@/components/RevealOnScroll';
 import EstimateForm from '@/components/EstimateForm';
 
 export const metadata = {
-  title: 'Contact Us | Request an Estimate',
-  description: 'Get in touch with Fairy Legacy Cleaning to request a free estimate or ask a question. We respond within 2 hours.',
-  alternates: { canonical: 'https://fairylegacycleaning.com/contact' },
+  title: 'Get a Free Estimate | Fairy Legacy Clean',
+  description: 'Get in touch with Fairy Legacy Clean to request a free estimate or ask a question. Serving Kissimmee, Davenport, and Central Florida. We respond within 2 hours.',
+  alternates: { canonical: 'https://fairylegacyclean.com/contact' },
 };
 
 export default function ContactPage() {
@@ -13,8 +13,8 @@ export default function ContactPage() {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://fairylegacycleaning.com' },
-      { '@type': 'ListItem', position: 2, name: 'Contact', item: 'https://fairylegacycleaning.com/contact' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://fairylegacyclean.com' },
+      { '@type': 'ListItem', position: 2, name: 'Contact', item: 'https://fairylegacyclean.com/contact' },
     ],
   };
 

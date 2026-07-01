@@ -11,7 +11,17 @@ export async function generateMetadata({ params }) {
   const { slug } = await params;
   const service = services.find((s) => s.slug === slug);
   if (!service) return { title: 'Service Not Found' };
-  return { title: service.metaTitle, description: service.metaDescription };
+  return {
+    title: service.metaTitle,
+    description: service.metaDescription,
+    alternates: { canonical: service.canonical },
+    openGraph: {
+      title: service.metaTitle,
+      description: service.metaDescription,
+      url: service.canonical,
+      images: service.ogImage ? [{ url: service.ogImage, width: 1200, height: 630 }] : [],
+    },
+  };
 }
 
 export default async function ServicePage({ params }) {
@@ -21,8 +31,49 @@ export default async function ServicePage({ params }) {
 
   const otherServices = services.filter((s) => s.slug !== slug);
 
+  // Generate JSON-LD Schemas
+  const schemas = [];
+  
+  // 1. Service Schema
+  schemas.push({
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': `${service.canonical}#service`,
+    name: service.name,
+    description: service.metaDescription,
+    provider: {
+      '@type': 'LocalBusiness',
+      name: 'Fairy Legacy Clean',
+      '@id': 'https://fairylegacyclean.com/#business'
+    },
+    areaServed: {
+      '@type': 'State',
+      name: 'Florida'
+    }
+  });
+
+  // 2. FAQ Schema (if available)
+  if (service.faq && service.faq.length > 0) {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: service.faq.map(f => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: f.a
+        }
+      }))
+    });
+  }
+
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
+      />
       {/* ── HERO ───────────────────────────────────────────── */}
       <section style={{
         minHeight: '60vh',

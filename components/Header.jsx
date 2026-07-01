@@ -38,7 +38,7 @@ export default function Header() {
       <div className="header-inner">
         {/* Logo */}
         <Link href="/" className="header-logo" onClick={close}>
-          <Sparkles className="icon-animated" size={24} /> Fairy Legacy
+          <Sparkles className="icon-animated" size={24} /> Fairy Legacy Clean
         </Link>
 
         {/* Desktop Nav */}
@@ -82,11 +82,14 @@ export default function Header() {
               </ul>
             </li>
             <li>
+              <Link href="/for-realtors" className={pathname === '/for-realtors' ? 'active' : ''} onClick={close}>For Realtors</Link>
+            </li>
+            <li>
               <Link href="/about" className={pathname === '/about' ? 'active' : ''} onClick={close}>About</Link>
             </li>
             <li>
               <Link href="/contact" className="btn-nav" onClick={close}>
-                Book Now
+                Get a Free Estimate
               </Link>
             </li>
           </ul>

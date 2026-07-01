@@ -11,7 +11,23 @@ export async function generateMetadata({ params }) {
   const { slug } = await params;
   const location = locations.find((l) => l.slug === slug);
   if (!location) return { title: 'Area Not Found' };
-  return { title: location.metaTitle, description: location.metaDescription };
+  return {
+    title: location.metaTitle,
+    description: location.metaDescription,
+    alternates: { canonical: location.canonical },
+    openGraph: {
+      title: location.metaTitle,
+      description: location.metaDescription,
+      url: location.canonical,
+      images: location.ogImage ? [{ url: location.ogImage, width: 1200, height: 630 }] : [],
+    },
+    other: location.geo ? {
+      'geo.region': location.geo.region,
+      'geo.placename': location.geo.placename,
+      'geo.position': location.geo.position,
+      'ICBM': location.geo.icbm,
+    } : {},
+  };
 }
 
 export default async function AreaPage({ params }) {
@@ -23,8 +39,42 @@ export default async function AreaPage({ params }) {
     .map((ns) => locations.find((l) => l.slug === ns))
     .filter(Boolean);
 
+  // Generate JSON-LD Schemas
+  const schemas = [];
+
+  // 1. Breadcrumb Schema
+  schemas.push({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://fairylegacyclean.com' },
+      { '@type': 'ListItem', position: 2, name: 'Service Areas', item: 'https://fairylegacyclean.com/areas' },
+      { '@type': 'ListItem', position: 3, name: location.name, item: location.canonical }
+    ]
+  });
+
+  // 2. FAQ Schema (if available)
+  if (location.faq && location.faq.length > 0) {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: location.faq.map(f => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: f.a
+        }
+      }))
+    });
+  }
+
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
+      />
       {/* ── HERO ───────────────────────────────────────────── */}
       <section style={{
         minHeight: '60vh',

@@ -3,8 +3,8 @@ export default function robots() {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: ['/api/'],
+      disallow: ['/thank-you', '/404', '/*?utm_*', '/*?ref=*'],
     },
-    sitemap: 'https://fairylegacycleaning.com/sitemap.xml',
-  }
+    sitemap: 'https://fairylegacyclean.com/sitemap.xml',
+  };
 }

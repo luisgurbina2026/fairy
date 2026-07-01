@@ -18,35 +18,35 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  metadataBase: new URL('https://fairylegacycleaning.com'),
+  metadataBase: new URL('https://fairylegacyclean.com'),
   title: {
-    template: '%s | Fairy Legacy Cleaning',
-    default: 'Fairy Legacy Cleaning | Professional Cleaning Services',
+    template: '%s | Fairy Legacy Clean',
+    default: 'Fairy Legacy Clean | Professional Cleaning Services',
   },
   description:
-    'Fairy Legacy Cleaning delivers impeccable residential, deep cleaning, move in/out, and Airbnb cleaning services. Premium, eco-friendly, 5-star rated.',
+    'Fairy Legacy Clean delivers impeccable residential, deep cleaning, move in/out, and Airbnb cleaning services. Premium, consistent, and photo-documented.',
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://fairylegacycleaning.com',
-    siteName: 'Fairy Legacy Cleaning',
-    title: 'Fairy Legacy Cleaning | Professional Cleaning Services',
+    url: 'https://fairylegacyclean.com',
+    siteName: 'Fairy Legacy Clean',
+    title: 'Fairy Legacy Clean | Professional Cleaning Services',
     description:
-      'Impeccable cleaning, unforgettable legacy. Premium residential, deep, move in/out, and Airbnb cleaning services. Eco-friendly. 5-Star rated.',
+      'Impeccable cleaning, unforgettable legacy. Premium residential, deep, move in/out, and Airbnb cleaning services. Photo-documented quality.',
     images: [
       {
-        url: '/img/og-default.jpg',
+        url: '/img/og/og-home.jpg',
         width: 1200,
         height: 630,
-        alt: 'Fairy Legacy Cleaning — Professional Cleaning Services',
+        alt: 'Fairy Legacy Clean — Professional Cleaning Services',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Fairy Legacy Cleaning | Professional Cleaning Services',
+    title: 'Fairy Legacy Clean | Professional Cleaning Services',
     description: 'Impeccable cleaning, unforgettable legacy.',
-    images: ['/img/og-default.jpg'],
+    images: ['/img/og/og-home.jpg'],
   },
 };
 

@@ -2,9 +2,14 @@ import Link from 'next/link';
 import RevealOnScroll from '@/components/RevealOnScroll';
 
 export const metadata = {
-  title: 'About Us | The Fairy Difference',
-  description: 'Learn about Fairy Legacy Cleaning. Our mission, our eco-friendly values, and why we are the most trusted cleaning service.',
-  alternates: { canonical: 'https://fairylegacycleaning.com/about' },
+  title: 'About Us | Fairy Legacy Clean',
+  description: 'Learn about Fairy Legacy Clean — our mission, our background-checked team, and why homeowners and vacation rental hosts across Central Florida trust us since 2019.',
+  alternates: { canonical: 'https://fairylegacyclean.com/about' },
+  openGraph: {
+    title: 'About Us | Fairy Legacy Clean',
+    url: 'https://fairylegacyclean.com/about',
+    images: [{ url: 'https://fairylegacyclean.com/img/og/og-about.jpg', width: 1200, height: 630 }],
+  },
 };
 
 export default function AboutPage() {
@@ -12,22 +17,22 @@ export default function AboutPage() {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://fairylegacycleaning.com' },
-      { '@type': 'ListItem', position: 2, name: 'About', item: 'https://fairylegacycleaning.com/about' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://fairylegacyclean.com' },
+      { '@type': 'ListItem', position: 2, name: 'About', item: 'https://fairylegacyclean.com/about' },
     ],
   };
 
   const values = [
-    { icon: '🌱', title: 'Eco-Friendly', desc: 'We only use safe, non-toxic, and sustainable cleaning products.' },
-    { icon: '🛡️', title: 'Trusted Team', desc: 'Every fairy is background-checked, insured, and highly trained.' },
-    { icon: '⭐', title: 'Excellence', desc: 'We don\'t just clean; we transform. 5-star quality is our baseline.' }
+    { icon: '📸', title: 'Photo-Documented Quality', desc: 'Every cleaning is logged through our quality control app — timestamped photos delivered after every visit.' },
+    { icon: '🛡️', title: 'Trusted Team', desc: 'Every team member is background-checked, insured, and continuously trained to the highest standard.' },
+    { icon: '⭐', title: 'Consistent Excellence', desc: "We don't just clean; we document and deliver. A consistent standard, every single visit." }
   ];
 
   const stats = [
-    { number: '500+', label: 'Happy Homes' },
-    { number: '5', label: 'Years Experience' },
+    { number: '2019', label: 'Founded' },
+    { number: '7', label: 'Years Experience' },
     { number: '100%', label: 'Satisfaction' },
-    { number: '47', label: '5-Star Reviews' }
+    { number: 'Photo', label: 'Documented' }
   ];
 
   return (

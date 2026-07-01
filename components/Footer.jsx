@@ -6,10 +6,10 @@ export default function Footer() {
       <div className="footer-grid">
         {/* Brand */}
         <div className="footer-brand">
-          <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><Sparkles className="icon-animated" size={24} /> Fairy Legacy</h4>
+          <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><Sparkles className="icon-animated" size={24} /> Fairy Legacy Clean</h4>
           <p>
             Redefining cleanliness with a touch of magic. Impeccable results,
-            every single visit. Eco-friendly products, background-checked team.
+            every single visit. Photo-documented quality, background-checked team.
           </p>
           <div className="footer-social">
             <a href="#" aria-label="Instagram"><Camera size={20} className="icon-animated" /></a>
@@ -24,6 +24,8 @@ export default function Footer() {
           <ul className="footer-links">
             <li><Link href="/">Home</Link></li>
             <li><Link href="/services">Services</Link></li>
+            <li><Link href="/areas">Service Areas</Link></li>
+            <li><Link href="/for-realtors">For Realtors</Link></li>
             <li><Link href="/about">About Us</Link></li>
             <li><Link href="/contact">Contact</Link></li>
           </ul>
@@ -48,7 +50,7 @@ export default function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <p>© {new Date().getFullYear()} Fairy Legacy Cleaning. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} Fairy Legacy Clean LLC. All rights reserved.</p>
       </div>
     </footer>
   );

@@ -6,7 +6,13 @@ export default function Footer() {
       <div className="footer-grid">
         {/* Brand */}
         <div className="footer-brand">
-          <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><Sparkles className="icon-animated" size={24} /> Fairy Legacy Clean</h4>
+          <Link href="/" style={{ display: 'inline-block', marginBottom: '1rem' }}>
+            <img 
+              src="/img/logo.png" 
+              alt="Fairy Legacy Clean Logo" 
+              style={{ height: '50px', width: 'auto', objectFit: 'contain' }} 
+            />
+          </Link>
           <p>
             Redefining cleanliness with a touch of magic. Impeccable results,
             every single visit. Photo-documented quality, background-checked team.

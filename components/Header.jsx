@@ -37,8 +37,12 @@ export default function Header() {
     <header className={headerClass}>
       <div className="header-inner">
         {/* Logo */}
-        <Link href="/" className="header-logo" onClick={close}>
-          <Sparkles className="icon-animated" size={24} /> Fairy Legacy Clean
+        <Link href="/" className="header-logo" onClick={close} style={{ display: 'flex', alignItems: 'center' }}>
+          <img 
+            src="/img/logo.png" 
+            alt="Fairy Legacy Clean Logo" 
+            style={{ height: '40px', width: 'auto', objectFit: 'contain' }} 
+          />
         </Link>
 
         {/* Desktop Nav */}
